@@ -20,8 +20,9 @@ class BankAccount {
 		if (amount <= 0) {
 			System.out.println("Amount is not valid");
 		}else {
-			System.out.println("Deposit sucessful.");
-			System.out.println("Your balance now is $" + (this.balance + amount));
+			this.balance += amount;
+			System.out.println("Deposit of " + amount + " sucessful.");
+			System.out.println("Your balance now is $" + (this.balance));
 		}
 		
 	}

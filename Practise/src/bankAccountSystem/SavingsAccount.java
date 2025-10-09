@@ -16,7 +16,7 @@ class SavingsAccount extends BankAccount implements InterestBearing{
 	@Override
 	public void applyInterest() {
 			this.balance += (this.interestRate * this.balance);
-			System.out.printf("Savings Account balance: $%-10.2f\n",this.balance);
+			System.out.printf("Interest Applied. Savings Account balance: $%-10.2f\n",this.balance);
 		
 	}
 	

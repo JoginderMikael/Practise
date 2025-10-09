@@ -4,18 +4,36 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		BankAccount bankAccount = new BankAccount("Joginder Mikaael", 1000);
-		SavingsAccount savingAccount = new SavingsAccount("Joginder Mikaael", 1000);
-		CurrentAcount currentAccount = new CurrentAcount("Joginder Mikaael", 1500);
+
+		
+		SavingsAccount savingAccount = new SavingsAccount("Jackline Boss", 2000);
+		CurrentAcount currentAccount = new CurrentAcount("Joginder Mikael", 1500);
+		
+	
+		//Showing account details
+		IO.println("Current Account Details");
+		currentAccount.displayDetails();
+		IO.println("Saving Account Details");
+		savingAccount.displayDetails();
+		
+		//Depositing money
+		currentAccount.deposit(1000);
+		currentAccount.displayDetails();
+		savingAccount.deposit(200);
+		savingAccount.displayDetails();
 		
 		
-		bankAccount.deposit(2100);
-		//bankAccount.withdraw(100);
-		bankAccount.displayDetails();
-		IO.println(bankAccount.getBalance());
+		// withdrawing
+		currentAccount.withdraw(1500);
+		currentAccount.displayDetails();
+		savingAccount.withdraw(1000);
+		savingAccount.displayDetails();
 		
+		//applying interest
 		savingAccount.applyInterest();
-		currentAccount.withdraw(400);
+		savingAccount.displayDetails();
+		
+		
 		
 		
 		
