@@ -10,42 +10,68 @@ public class Main {
 	
 	//CREATE SAVINGS ACCOUNT METHOD
 	private void createSavingsAccount(Scanner scanner) {
+		IO.println("\n===SAVINGS ACCOUNT CREATION MENU.===");
 		
-		boolean isInValid = true;
-		String name = null;
-		double balance;
+		String name;
+		double balance = 0.0;
 		
-		while(isInValid) {
-			//IO.println(isInValid);
-			IO.println("\nSAVINGS ACCOUNT CREATION MENU.");
+		while(true) {
+			
 			System.out.print("Enter Your full Names: ");
+			name = scanner.nextLine().trim();
 			
-			if(scanner.hasNextLine()) {
-				isInValid = false;
-				name = scanner.nextLine();
-
-			}else {
-				System.out.print("Please Enter a valid Name");	
-		}
-			
-
-			IO.println("Deposit initial balance: $");
-			balance = scanner.nextDouble();
-			
-			if(balance <= 0 ) {
-				balance = 0;
+			if(name.isEmpty()) {
+				IO.println("Name Connot be empty. Please enter a valid name.");
+				continue;
 			}
 			
+			if(!name.matches("^[a-zA-Z\\s'\\-]+$")) {
+				IO.println("Invalid Name. Only letters, spaces, apostrophes, and hyphens are allowed.");
+				continue;
+			}
+			
+			if(name.matches("^[0-9]+$")) {
+				IO.println("Name cannot contain only numbers. Please try again.");
+				continue;
+				
+			}
+			
+			break;
+		}
+			
+		while(true) {
+			
+			System.out.println("Enter initial deposit amount: $");
+			
+			try {
+				balance = scanner.nextDouble();
+				scanner.nextLine();
+				
+				if(balance < 0) {
+					IO.println("Negative balance not allowed. Setting initial balance to $0.00.");
+	                balance = 0.0;
+				}
+				
+				break; //exit this loop, valid input received
+				
+			} catch(InputMismatchException e) {
+				 	IO.println("Invalid amount. Please enter a numeric value.");
+		            scanner.nextLine();
+			}
+			
+			}
+			
+	
 			this.savingAccount = new SavingsAccount(name, balance);
 			
 			IO.println("ACCOUNT CREATED SUCCESSFULLY.");
 			savingAccount.displayDetails();
-			IO.println();
+			IO.println("------------------------------");
 			
 		}
 		
 		
-	}
+	
 	
 	//SAVINGS MENU
 	private void savingsMenu(Scanner scanner) {
@@ -105,39 +131,63 @@ public class Main {
 	//CREATE CURRENT ACCOUNT METHOD
 	private void CreateCurrentAccount(Scanner scanner) {
 		
-		boolean isInValid = true;
-		String name;
-		double balance;
+IO.println("\n===CURRENT ACCOUNT CREATION MENU.===");
 		
-		while(isInValid) {
+		String name;
+		double balance = 0.0;
+		
+		while(true) {
 			
-			IO.println("\nCURRENT ACCOUNT CREATION MENU.");
 			System.out.print("Enter Your full Names: ");
+			name = scanner.nextLine().trim();
+			
+			if(name.isEmpty()) {
+				IO.println("Name Connot be empty. Please enter a valid name.");
+				continue;
+			}
+			
+			if(!name.matches("^[a-zA-Z\\s'\\-]+$")) {
+				IO.println("Invalid Name. Only letters, spaces, apostrophes, and hyphens are allowed.");
+				continue;
+			}
+			
+			if(name.matches("^[0-9]+$")) {
+				IO.println("Name cannot contain only numbers. Please try again.");
+				continue;
+				
+			}
+			
+			break;
+		}
+			
+		while(true) {
+			
+			System.out.println("Enter initial deposit amount: $");
 			
 			try {
-				name = scanner.nextLine();
+				balance = scanner.nextDouble();
 				scanner.nextLine();
-			}catch(InputMismatchException e) {
-				IO.println("Please Enter a valid Name");
-				scanner.nextLine();
-				break;
+				
+				if(balance < 0) {
+					IO.println("Negative balance not allowed. Setting initial balance to $0.00.");
+	                balance = 0.0;
+				}
+				
+				break; //exit this loop, valid input received
+				
+			} catch(InputMismatchException e) {
+				 	IO.println("Invalid amount. Please enter a numeric value.");
+		            scanner.nextLine();
 			}
 			
-
-			System.out.print("Deposit initial balance: $");
-			balance = scanner.nextDouble();
-			
-			if(balance <= 0 ) {
-				balance = 0;
 			}
 			
+	
 			this.currentAccount = new CurrentAcount(name, balance);
 			
 			IO.println("ACCOUNT CREATED SUCCESSFULLY.");
-			this.currentAccount.displayDetails();
-			IO.println();
-			
-		}
+			currentAccount.displayDetails();
+			IO.println("------------------------------");
 	}
 	
 	//CURRENT MENU

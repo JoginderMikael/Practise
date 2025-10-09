@@ -18,22 +18,30 @@ class BankAccount {
 	void deposit(double amount) {
 		
 		if (amount <= 0) {
+			IO.println("------------------------------");
 			System.out.println("Amount is not valid");
+			IO.println("------------------------------");
 		}else {
 			this.balance += amount;
+			IO.println("------------------------------");
 			System.out.println("Deposit of " + amount + " sucessful.");
 			System.out.println("Your balance now is $" + (this.balance));
+			IO.println("------------------------------");
 		}
 		
 	}
 	
 	void withdraw(double amount) {
 		if(this.balance < amount) {
+			IO.println("------------------------------");
 			System.out.println("INSUFFICIENT FUNDS IN YOUR ACCOUNT.");
+			IO.println("------------------------------");
 		}else {
 			this.balance -= amount;
+			IO.println("------------------------------");
 			System.out.println("You have sucessfully withdrawn $" + amount + " from your account.");
 			System.out.println("Your balance now is $" + (this.balance));
+			IO.println("------------------------------");
 		}
 		
 	}

@@ -16,15 +16,19 @@ class SavingsAccount extends BankAccount implements InterestBearing{
 	@Override
 	public void applyInterest() {
 			this.balance += (this.interestRate * this.balance);
+			IO.println("------------------------------------------------------------");
 			System.out.printf("Interest Applied. Savings Account balance: $%-10.2f\n",this.balance);
+			IO.println("-------------------------------------------------------------");
 		
 	}
 	
 	@Override
 	void withdraw(double amount) {
 		if (this.balance < this.minimumBalance) {
+			IO.println("----------------------------------------------------------------");
             System.out.println("ERROR: Minimum withdrawal amount for Savings Account is $500.");
             System.out.printf("Your current account balance is :$%-10.2f", this.balance);
+            IO.println("-----------------------------------------------------------------");
         } else {
             super.withdraw(amount); 
         }
