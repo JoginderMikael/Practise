@@ -30,8 +30,9 @@ class BankAccount {
 		if(this.balance < amount) {
 			System.out.println("INSUFFICIENT FUNDS IN YOUR ACCOUNT.");
 		}else {
+			this.balance -= amount;
 			System.out.println("You have sucessfully withdrawn $" + amount + " from your account.");
-			System.out.println("Your balance now is $" + (this.balance - amount));
+			System.out.println("Your balance now is $" + (this.balance));
 		}
 		
 	}
