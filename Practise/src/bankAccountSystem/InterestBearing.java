@@ -1,6 +1,6 @@
 package bankAccountSystem;
 
-public interface InterestBearing {
+interface InterestBearing {
 
 	public void applyInterest();
 }

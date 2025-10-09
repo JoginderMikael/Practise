@@ -1,5 +1,10 @@
 package bankAccountSystem;
 
-public class CurrentAcount extends BankAccount {
+class CurrentAcount extends BankAccount {
+
+	CurrentAcount(String accountHolderName, double startingBalance) {
+		super(accountHolderName, startingBalance);
+		// TODO Auto-generated constructor stub
+	}
 
 }

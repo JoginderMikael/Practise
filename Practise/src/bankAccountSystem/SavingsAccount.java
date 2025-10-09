@@ -1,6 +1,11 @@
 package bankAccountSystem;
 
-public class SavingsAccount extends BankAccount implements InterestBearing{
+class SavingsAccount extends BankAccount implements InterestBearing{
+
+	SavingsAccount(String accountHolderName, double balance) {
+		super(accountHolderName, balance);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void applyInterest() {
