@@ -2,6 +2,11 @@ package libraryManagementApp;
 
 public class Magazine extends LibraryItem implements Borrowable{
 	
+	Magazine(String itemID, String title, String authorOrEditor) {
+		super(itemID, title, authorOrEditor);
+		// TODO Auto-generated constructor stub
+	}
+
 	int issueNumber;
 	String publicationMonth;
 
