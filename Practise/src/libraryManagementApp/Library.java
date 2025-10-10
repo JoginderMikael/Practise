@@ -43,13 +43,17 @@ public class Library {
 			if (item.itemID == itemID) {
 				if(item instanceof Borrowable) {
 					((Borrowable) item).borrow(borrowerName);
+					break;
 				}else {
 					IO.println("This Item Cannot be Borrowed.");
 				}
-				continue;
-			}
+			} 
+			IO.println("Item Not Found.");
+			
+			
 		}
-		IO.println("Item Not Found.");
+		
+		
 	}
 	
 	void returnItem(String itemID) {
@@ -57,13 +61,17 @@ public class Library {
 			if(item.itemID == itemID) {
 				if(item instanceof Borrowable) {
 					((Borrowable) item).returnItem();
+					break;
 				}else {
 					IO.println("Item is not Returnable.");
 				}
-				continue;
+				
 			}
+			
+			IO.println("Item is not found.");
 		}
-		IO.println("Itsm is not found.");
+		
+		
 	}
 	
 	

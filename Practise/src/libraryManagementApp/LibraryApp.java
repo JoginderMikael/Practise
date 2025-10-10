@@ -1,33 +1,79 @@
 package libraryManagementApp;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class LibraryApp {
 
 	public static void main(String[] args) {
 		System.out.println("LIBRARY MANAGEMENT SYSTEM");
 		
-	//	LibraryItem libraryItem = new Book("17872", "Sexorcised", "Jacob", "Fiction", 350);
+		Scanner scanner = new Scanner(System.in);
+		
+		Library library = new Library();
 		
 		Book book = new Book("17872", "Sexorcised", "Jacob", "Fiction", 350);
-		Magazine magazine = new Magazine("17872", "Sexorcised", "Jacob", "JUNE", 90993);
-		ReferenceBook referenceBook = new ReferenceBook("17872", "Sexorcised", "Jacob", "SEX");
-	
-		//	IO.println(libraryItem.toString());
-	//	IO.println(libraryItem.getItemType());
-	//	book.borrow("Joginder Mikael");
-	//IO.println(book.toString());
-		//book.returnItem();
-		//IO.println(libraryItem.toString());
-		//IO.println(book.toString());
-	//	IO.println(magazine.toString());
-	//	magazine.returnItem();
-	//	magazine.borrow("Joginder Mikael");
-	//	IO.println(magazine.toString());
-		magazine.borrow("Joginder Mikael");
-	
-		IO.println(referenceBook.toString());
+		Magazine magazine = new Magazine("17875", "Language of Computer", "Susan", "JUNE", 90993);
+		ReferenceBook referenceBook = new ReferenceBook("17876", "Atlas", "Joes", "Geography");
 		
 		
+		library.addItem(book);
+		library.addItem(magazine);
+		library.addItem(referenceBook);
+		
+		boolean exit = false;
+		
+		while(!exit) {
+			System.out.println("OPTIONS "
+					+ "\n1. Show all items."
+					+ "\n2. Borrow an item."
+					+ "\n3 Return an item."
+					+ "\n4. Show Available items."
+					+ "\n5. Exit"
+					+ "\n");
+			System.out.print("Choose option (1 - 5): ");
+			int option = 0;
+			try {
+				option = scanner.nextInt();
+				scanner.nextLine();
+			}catch(InputMismatchException e) {
+				IO.println("INVALID INPUT, PLEASE ENTER A NUMBER (1 - 5)");
+				scanner.nextLine();
+			}
+			
+			switch(option) {
+					case 1 -> library.displayAllItems();
+					case 2 -> {
+						System.out.print("Enter a Valid Item ID: ");
+						
+						String itemID = scanner.nextLine();
+						
+						System.out.print("Enter Your borrower Name: ");
+						
+						String borrowerName = scanner.nextLine();
+						
+						library.borrowItem(itemID, borrowerName);
+	
+					}
+					case 3 -> {
+						System.out.print("Enter a Valid Item ID: ");
+						
+						String itemID = scanner.nextLine();
+						library.returnItem(itemID);
+					}
+					case 4 -> library.displayAvailableItems();
+					case 5 -> {
+						IO.println("GOOD BYE");
+						exit = true;
+					}
+					default -> IO.println("INVALID OPTION, Pleas Enter valid option.");
+				}
+			
+		
+		}
 
+	scanner.close();
+	
 	}
 
 }
