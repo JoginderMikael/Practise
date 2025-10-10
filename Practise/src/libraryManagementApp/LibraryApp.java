@@ -44,6 +44,8 @@ public class LibraryApp {
 			switch(option) {
 					case 1 -> library.displayAllItems();
 					case 2 -> {
+						
+						try {
 						System.out.print("Enter a Valid Item ID: ");
 						
 						String itemIdd = scanner.nextLine().trim();
@@ -53,7 +55,11 @@ public class LibraryApp {
 						String borrowerName = scanner.nextLine();
 
 						library.borrowItem(itemIdd, borrowerName);
-	
+						
+						}catch(InputMismatchException e) {
+							IO.println("INVALID INPUT");
+							scanner.nextLine();
+						}
 					}
 					case 3 -> {
 						System.out.print("Enter a Valid Item ID: ");
