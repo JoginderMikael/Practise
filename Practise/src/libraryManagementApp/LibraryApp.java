@@ -27,7 +27,7 @@ public class LibraryApp {
 			System.out.println("OPTIONS "
 					+ "\n1. Show all items."
 					+ "\n2. Borrow an item."
-					+ "\n3 Return an item."
+					+ "\n3. Return an item."
 					+ "\n4. Show Available items."
 					+ "\n5. Exit"
 					+ "\n");
@@ -46,27 +46,27 @@ public class LibraryApp {
 					case 2 -> {
 						System.out.print("Enter a Valid Item ID: ");
 						
-						String itemID = scanner.nextLine();
+						String itemIdd = scanner.nextLine().trim();
 						
 						System.out.print("Enter Your borrower Name: ");
 						
 						String borrowerName = scanner.nextLine();
-						
-						library.borrowItem(itemID, borrowerName);
+
+						library.borrowItem(itemIdd, borrowerName);
 	
 					}
 					case 3 -> {
 						System.out.print("Enter a Valid Item ID: ");
 						
-						String itemID = scanner.nextLine();
-						library.returnItem(itemID);
+						String itemIdd = scanner.nextLine().trim();
+						library.returnItem(itemIdd);
 					}
 					case 4 -> library.displayAvailableItems();
 					case 5 -> {
 						IO.println("GOOD BYE");
 						exit = true;
 					}
-					default -> IO.println("INVALID OPTION, Pleas Enter valid option.");
+					default -> IO.println("INVALID OPTION, Please Enter valid option.");
 				}
 			
 		

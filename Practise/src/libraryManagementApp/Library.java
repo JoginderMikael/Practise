@@ -39,38 +39,59 @@ public class Library {
 	
 	
 	void borrowItem(String itemID, String borrowerName) {
+		
+		boolean found = false;
+		
 		for (LibraryItem item : items) {
-			if (item.itemID == itemID) {
+			
+			if (item == null) {
+				continue;
+			}
+			
+			if (item.itemID.equals(itemID)) {
+				found = true;
 				if(item instanceof Borrowable) {
 					((Borrowable) item).borrow(borrowerName);
-					break;
 				}else {
 					IO.println("This Item Cannot be Borrowed.");
+				
 				}
+				break;
 			} 
-			IO.println("Item Not Found.");
-			
-			
+
 		}
 		
-		
+		if (found == false) {
+		IO.println("Item Not Found.");	
+		}
 	}
 	
 	void returnItem(String itemID) {
+		
+		boolean found = false;
+		
 		for(LibraryItem item : items) {
-			if(item.itemID == itemID) {
+			
+			if (item == null) {
+				continue;
+			}
+			
+			if(item.itemID.equals(itemID)) {
+				found = true;
 				if(item instanceof Borrowable) {
 					((Borrowable) item).returnItem();
-					break;
 				}else {
 					IO.println("Item is not Returnable.");
 				}
 				
+				break;
 			}
-			
-			IO.println("Item is not found.");
+
 		}
 		
+		if(found == false) {
+		IO.println("Item is not found.");
+		}
 		
 	}
 	
