@@ -20,8 +20,10 @@ public abstract class LibraryItem {
 	
 	@Override
 	public String toString() {
-		return "Item ID: " + this.itemID + 
+		return "==============================="+ 
+				"\nItem ID: " + this.itemID + 
 				"\nTitle: " + this.title +
+				"\nItem Type: " + this.getItemType() +
 				"\nAuthor/Editor: " + this.authorOrEditor +
 				"\nAvailability: " + (this.isAvailable ? "Available" : "Borrowed");
 	}

@@ -1,21 +1,27 @@
 package libraryManagementApp;
-
+//NON BORROWABLE ITEMS
 public class ReferenceBook extends LibraryItem {
 
-	ReferenceBook(String itemID, String title, String authorOrEditor) {
+	
+	String subjectArea;
+	
+	ReferenceBook(String itemID, String title, String authorOrEditor, String subjectArea) {
 		super(itemID, title, authorOrEditor);
-		// TODO Auto-generated constructor stub
+		this.subjectArea = subjectArea;
 	}
 
 	@Override
 	String getItemType() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Reference Book";
 	}
 
 	@Override
 	public String toString() {
-		return null;
+		return super.toString() + 
+				"\nSubject: " + this.subjectArea +
+				"\nItem Type: " + this.getItemType() +
+				"\nNOTE: Refernce material Only - Not for Borrowing. "
+				+ "\n===============================";
 		
 	}
 }

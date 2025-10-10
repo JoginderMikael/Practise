@@ -1,5 +1,5 @@
 package libraryManagementApp;
-
+ //BOOK THAT CAN BE BORROWERED
 public class Book extends LibraryItem implements  Borrowable{
 	
 
@@ -37,6 +37,7 @@ public class Book extends LibraryItem implements  Borrowable{
 			this.isAvailable = true;
 			this.borrowerName = null;
 			IO.println("Book returned Successfully.");
+			
 		}
 		else {
 			IO.println("Book is already available");
@@ -58,9 +59,10 @@ public class Book extends LibraryItem implements  Borrowable{
 	@Override
 	public String toString() {
 		return super.toString() + 
-				"\ngenre: " + this.genre + 
-				"\npages: " +this.pageCount + "\n"+
-				(this.isAvailable ? " " : "Borrowerd by: " + this.borrowerName);
+				"\nGenre: " + this.genre + 
+				"\nGages: " +this.pageCount + "\n"+
+				(this.isAvailable ? " " : "Borrowerd by: " + this.borrowerName) +
+				"\n===============================";
 		
 	}
 
