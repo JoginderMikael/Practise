@@ -41,6 +41,6 @@ public class Transaction {
 	@Override
 	public String toString() {
 		return "Transaction ID = " + this.ID + "\nDate = " + this.date + "\nAmount = " + this.amount + "\nDescription = " + this.description
-				+ "\nCategory=" + this.category + "\n";
+				+ "\nCategory = " + this.category + "\n";
 	}
 }
