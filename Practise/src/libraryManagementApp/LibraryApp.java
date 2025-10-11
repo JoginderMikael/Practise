@@ -12,6 +12,7 @@ public class LibraryApp {
 		
 		Library library = new Library();
 		
+		
 		Book book = new Book("17872", "Sexorcised", "Jacob", "Fiction", 350);
 		Magazine magazine = new Magazine("17875", "Language of Computer", "Susan", "JUNE", 90993);
 		ReferenceBook referenceBook = new ReferenceBook("17876", "Atlas", "Joes", "Geography");
