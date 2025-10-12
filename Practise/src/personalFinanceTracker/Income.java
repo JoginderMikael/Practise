@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Income extends Transaction{
 
 	
-	String source;
+	private String source;
 	
 	Income(int ID, LocalDate date, double amount, String description, Category category, String source) {
 		super(ID, date, amount, description, category);
@@ -18,7 +18,7 @@ public class Income extends Transaction{
 	
 	@Override
 	public String toString() {
-		return "INCOME\n" + super.toString() + "Source = " + this.source + "\n";
+		return "INCOME\n" + super.toString() + "Source = " + this.getSource() + "\n";
 	}
 	
 }

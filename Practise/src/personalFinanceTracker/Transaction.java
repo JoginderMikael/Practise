@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Transaction {
 
-	int ID;
-	LocalDate date;
-	double amount;
-	String description;
-	Category category;
+	private int ID;
+	private LocalDate date;
+	private double amount;
+	private String description;
+	private Category category;
 	
 	Transaction(int ID, LocalDate date, double amount, String description, Category category){
 		this.ID = ID;
@@ -23,7 +23,7 @@ public class Transaction {
 	}
 	
 	public LocalDate getDate() {
-		return this.getDate();
+		return this.date;
 	}
 	
 	public double getAmount() {
@@ -40,7 +40,7 @@ public class Transaction {
 	
 	@Override
 	public String toString() {
-		return "Transaction ID = " + this.ID + "\nDate = " + this.date + "\nAmount = " + this.amount + "\nDescription = " + this.description
-				+ "\nCategory = " + this.category + "\n";
+		return "Transaction ID = " + this.getId() + "\nDate = " + this.getDate() + "\nAmount = " + this.getAmount() + "\nDescription = " + this.getDescription()
+				+ "\nCategory = " + this.getCategory() + "\n";
 	}
 }
