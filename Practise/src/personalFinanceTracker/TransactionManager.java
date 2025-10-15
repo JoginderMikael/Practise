@@ -28,6 +28,17 @@ public class TransactionManager {
 		}
 	}
 	
+	double searchByCategory(Category category) {
+		double total = 0.0;
+		for (Transaction transaction : this.transactions) {
+			if (transaction.getCategory() == category) {
+				IO.println(transaction.toString());
+				total += transaction.getAmount();
+			}
+		}
+		return total;
+	}
+	
 	double getTotalIncome() {
 		double totalIncome = 0.0;
 		for (Transaction transaction : this.transactions) {
@@ -60,5 +71,9 @@ public class TransactionManager {
 	
 	void loadFromFile() {
 		this.transactions = FileHandler.readFromFile("transactions.csv");
+	}
+	
+	void deleteTransaction(int id) {
+		this.transactions.removeIf(transaction -> transaction.getId() == id);
 	}
 }
