@@ -76,4 +76,8 @@ public class TransactionManager {
 	void deleteTransaction(int id) {
 		this.transactions.removeIf(transaction -> transaction.getId() == id);
 	}
+	
+		int getTransactionCount() {
+			return this.transactions.size();
+		}
 }
