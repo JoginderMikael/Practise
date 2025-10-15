@@ -86,13 +86,33 @@ public class Student extends Person{
 		IO.println("Student Name: " + name);
 		IO.println("Student ID: " + id);
 		IO.println("--------------------------");
-		for (int i = 0; i < subjects.length-1; i++) {
+		for (int i = 0; i < subjects.length; i++) {
 			IO.print("Subject: " + subjects[i] + " | Marks: ");
 			for (int j = 0; j < marks[i].length; j++) {
 				IO.print((marks[i][j] != null ? marks[i][j] : "N/A") + " ");
 			}
 			IO.println("| Grade: " + grades[i]);
 		}
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+		String REPORT = "==============================\n";
+		        REPORT += "        Report Card          \n";
+				REPORT += "Student Name: " + name + "\n";
+				REPORT += "Student ID: " + id + "\n";
+				
+				for (int i = 0; i < subjects.length; i++) {
+					REPORT += "------------------------------\n";
+					REPORT += "Subject: " + subjects[i] + "\nMarks: ";
+					for (int j = 0; j < marks[i].length; j++) {
+						REPORT += (marks[i][j] != null ? marks[i][j] : "N/A") + " ";
+					}
+					REPORT += "\nGrade: " + grades[i] + "\n";
+				}
+		return REPORT;
 		
 	}
 
