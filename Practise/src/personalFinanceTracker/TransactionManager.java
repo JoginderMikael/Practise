@@ -54,10 +54,11 @@ public class TransactionManager {
 	}
 	
 	void saveToFile() {
-		
+		FileHandler fileHandler = new FileHandler();
+		fileHandler.writeToFile("transactions.csv", this.transactions);
 	}
 	
 	void loadFromFile() {
-
+		this.transactions = FileHandler.readFromFile("transactions.csv");
 	}
 }

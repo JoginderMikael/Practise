@@ -1,0 +1,19 @@
+INCOME
+Transaction ID = 2
+Date = 2025-10-12
+Amount = 2000.0
+Description = Salary for June
+Category = SALARY
+Source = Company XYZ
+
+-----
+INCOME
+INCOME
+Transaction ID = 2
+Date = 2025-10-12
+Amount = 2000.0
+Description = Salary for June
+Category = SALARY
+Source = Company XYZ
+
+-----
