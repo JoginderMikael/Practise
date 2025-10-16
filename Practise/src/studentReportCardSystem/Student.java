@@ -3,7 +3,7 @@ package studentReportCardSystem;
 public class Student extends Person{
 
 	private String[] subjects;
-	private String[][] marks;
+	 String[][] marks;
 	private char[] grades;
 	private double average;
 	
