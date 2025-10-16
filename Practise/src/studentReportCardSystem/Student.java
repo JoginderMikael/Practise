@@ -2,10 +2,10 @@ package studentReportCardSystem;
 
 public class Student extends Person{
 
-	private String[] subjects;
+	String[] subjects;
 	 String[][] marks;
-	private char[] grades;
-	private double average;
+	char[] grades;
+	double average;
 	
 	public Student(String name, String id, String[] subjects, int numTests) {
 		super(name, id);
