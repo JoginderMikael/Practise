@@ -1,9 +1,11 @@
 package multiGameArcade;
 
+import java.util.Scanner;
+
 public class RockPaperScissors implements Game{
 
 	@Override
-	public void startGame() {
+	public void startGame(Scanner scanner) {
 		
 		
 	}
