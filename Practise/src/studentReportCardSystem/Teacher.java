@@ -67,7 +67,7 @@ public class Teacher extends Person {
 		System.out.println("Entering marks for student: " + student.name);
 		for (int i = 0; i < student.getSubjects().length; i++) {
 			for (int j = 0; j < student.getMarks()[i].length; j++) {
-				System.out.println("Enter marks for subject " + subjects[i] + " (Test " + (j+1) + ") :");
+				System.out.print("Enter marks for subject " + subjects[i] + " (Test " + (j+1) + ") :");
                 String score = new Scanner(System.in).nextLine(); 
                 student.setMarks(i, j, score);
             }

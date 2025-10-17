@@ -23,6 +23,11 @@ public class Main {
 		
 		if (teacher.login(username, password)) {
 			IO.println("Login successful. Welcome, " + teacher.name + "!");
+			
+			IO.println("\n*******************************");
+			IO.println("Teacher Information:");
+			teacher.displayInfo();
+			IO.println("*******************************\n");
 
              IO.println("\nYou can now manage student report cards.");
              IO.println("=============================================\n");

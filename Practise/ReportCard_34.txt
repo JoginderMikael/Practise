@@ -1,0 +1,9 @@
+Report Card for Michael Joginder (ID: 34)
+--------------------------------------------------
+Subject         Marks      Grade     
+--------------------------------------------------
+Math            90, 80, 89 B         
+Science         47, 89, 93 C         
+History         null, null, null N         
+--------------------------------------------------
+Overall Average: 81.33
