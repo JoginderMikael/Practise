@@ -13,8 +13,7 @@ public class FinanceApp {
 	
 		Scanner scanner = new Scanner(System.in);
 		TransactionManager manager = new TransactionManager();
-		
-		
+
 		IO.println("===================================");
 		IO.println("Welcome to Personal Finance Tracker");
 		IO.println("====================================");
@@ -70,8 +69,13 @@ public class FinanceApp {
 	
 	                IO.print("Enter description: ");
 	                String description = scanner.nextLine();
-	
-	                IO.print("Enter category (FOOD, BILLS, SALARY, OTHER): ");
+	                
+	                IO.print("Available categories: ");
+	                for (Category category : Category.values()) {
+	    				IO.print(category + " , ");
+	    			}
+					
+	                IO.print("\nEnter category : ");
 	                String categoryStr = scanner.nextLine();
 	                Category category = Category.valueOf(categoryStr.toUpperCase());
 	
@@ -101,8 +105,14 @@ public class FinanceApp {
 	
 					IO.print("Enter description: ");
 					String description = scanner.nextLine();
-	
-					IO.print("Enter category (FOOD, BILLS, SALARY, OTHER): ");
+					
+					IO.print("Available categories: ");
+	               
+					for (Category category : Category.values()) {
+	    				IO.print(category + " , ");
+	    			}
+					
+					IO.print("\nEnter category : ");
 					String categoryStr = scanner.nextLine();
 					Category category = Category.valueOf(categoryStr.toUpperCase());
 	
