@@ -53,20 +53,19 @@ public class Teacher extends Person {
 	}
 
 
-
+	// teacher login method
 	boolean login(String username, String password) {
 		if (this.username.equals(username) && this.password.equals(password)) {
-			System.out.println("Login successful");
 			return true;
 		} else {
-			System.out.println("Login failed");
 			return false;
 		}
 	}
-
+	
+	// method to enter marks for a student
 	void enterMarks(Student student) {
 		System.out.println("Entering marks for student: " + student.name);
-		for (int i = 0; i < student.getMarks()[i].length; i++) {
+		for (int i = 0; i < student.getSubjects().length; i++) {
 			for (int j = 0; j < student.getMarks()[i].length; j++) {
 				System.out.println("Enter marks for subject " + subjects[i] + " (Test " + (j+1) + ") :");
                 String score = new Scanner(System.in).nextLine(); 
