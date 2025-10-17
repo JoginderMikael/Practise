@@ -2,10 +2,10 @@ package studentReportCardSystem;
 
 public class Student extends Person{
 
-	String[] subjects;
-	 String[][] marks;
-	char[] grades;
-	double average;
+	private String[] subjects;
+	private String[][] marks;
+	private char[] grades;
+	private double average;
 	
 	public Student(String name, String id, String[] subjects, int numTests) {
 		super(name, id);
@@ -14,6 +14,47 @@ public class Student extends Person{
 		this.grades = new char[this.subjects.length];
 		this.average = 0.0;
 	}
+
+	
+	public String[] getSubjects() {
+		return subjects;
+	}
+
+
+	public void setSubjects(String[] subjects) {
+		this.subjects = subjects;
+	}
+
+
+	public String[][] getMarks() {
+		return marks;
+	}
+
+
+	public void setMarks(String[][] marks) {
+		this.marks = marks;
+	}
+
+
+	public char[] getGrades() {
+		return grades;
+	}
+
+
+	public void setGrades(char[] grades) {
+		this.grades = grades;
+	}
+
+
+	public double getAverage() {
+		return average;
+	}
+
+
+	public void setAverage(double average) {
+		this.average = average;
+	}
+
 
 	void setMarks(int subjectIndex, int testIndex, String score) {
 		if (subjectIndex >= 0 && subjectIndex < subjects.length && testIndex >= 0
