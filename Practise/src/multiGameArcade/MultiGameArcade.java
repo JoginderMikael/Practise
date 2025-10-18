@@ -28,6 +28,7 @@ public class MultiGameArcade {
 			try {
             IO.print("\nEnter your choice (1-5): ");
              choice = scanner.nextInt();
+             scanner.nextLine();
 			
 			} catch (Exception e) {
                 IO.print("Invalid input. Please enter a number between 1 and 5.");
