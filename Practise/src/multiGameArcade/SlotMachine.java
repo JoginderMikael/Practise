@@ -42,10 +42,34 @@ public class SlotMachine implements Game{
 				int reward = 50;
 				IO.println("Jackpot! You won " + reward + " points!");
 				ScoreManager.addPoints(reward);
+				
+				try {
+					if (ScoreManager.getScore() > ScoreManager.loadHighScore()) {
+						IO.println("New High Score: " + ScoreManager.getScore() + " points!");
+						ScoreManager sm = new ScoreManager();
+						sm.saveHighScoreToFile();
+					}
+				} catch (Exception e) {
+					IO.println("An error occurred while checking/saving the high score." + e.getMessage());
+					e.printStackTrace();
+				}
+				
 			} else if (slot1.equals(slot2) || slot2.equals(slot3) || slot1.equals(slot3)) {
 				int reward = 20;
 				IO.println("Nice! You matched two symbols and won " + reward + " points!");
 				ScoreManager.addPoints(reward);
+				
+				try {
+					if (ScoreManager.getScore() > ScoreManager.loadHighScore()) {
+						IO.println("New High Score: " + ScoreManager.getScore() + " points!");
+						ScoreManager sm = new ScoreManager();
+						sm.saveHighScoreToFile();
+					}
+				} catch (Exception e) {
+					IO.println("An error occurred while checking/saving the high score." + e.getMessage());
+					e.printStackTrace();
+				}
+				
 			} else {
 				IO.println("No matches this time. Better luck next spin!");
 			}
