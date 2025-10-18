@@ -18,12 +18,13 @@ public class ScoreManager {
 	
 	public void saveHighScoreToFile() {
 	 
-		String filename = "scores.txt";
+		String filename = "highscore.txt";
 	    FileWriter writer = null;
 	    
 		try {
-			writer = new FileWriter(filename, true); 
-			writer.write("Score: " + Score + "\n");
+			writer = new FileWriter(filename); 
+			writer.write(String.valueOf(Score)); //convert score to string and write to file
+			
 		} catch (Exception e) {
 			IO.println("An error occurred while saving the score." + e.getMessage());
 		} finally {
@@ -39,7 +40,7 @@ public class ScoreManager {
 		
 	}
 	
-	public int loadHighScore() {
+	public static int loadHighScore() {
 		String filename = "highscore.txt";
 		//FileWriter writer = null;
 		int highScore = 0;
@@ -48,6 +49,7 @@ public class ScoreManager {
 			String line = reader.readLine();
 			if (line != null) {
 				highScore = Integer.parseInt(line);
+				return highScore;
 			}
 		} catch (Exception e) {
 			IO.println("An error occurred while loading the high score." + e.getMessage());
