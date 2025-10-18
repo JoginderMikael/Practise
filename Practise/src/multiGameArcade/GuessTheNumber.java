@@ -16,9 +16,11 @@ public class GuessTheNumber implements Game{
 		int numberOfTries = 0;
 		boolean hasGuessedCorrectly = false;
 
+	try {
 		while (!hasGuessedCorrectly) {
 			IO.print("Enter your guess: ");
 			int playerGuess = scanner.nextInt();
+			scanner.nextLine();
 			numberOfTries++;
 
 			if (playerGuess < numberToGuess) {
@@ -58,6 +60,13 @@ public class GuessTheNumber implements Game{
 				
 			}
 		}
+		
+	} catch (Exception e) {
+		IO.println("An error occurred during the game: " + e.getMessage());
+		e.printStackTrace();
+	}
+
+
 		
 	}
 

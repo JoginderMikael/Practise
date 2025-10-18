@@ -13,14 +13,14 @@ public class MultiGameArcade {
 		
 		while(!exit) {
 			
-			IO.println("---------------------------------------");
+			IO.println("\n---------------------------------------");
 			IO.println("\nSelect a game to play:");
 			IO.println("1. Guess the Number Game");
 			IO.println("2. Hang Man Game");
 			IO.println("3. Rock Paper Scissors Game");
 			IO.println("4. Slot Manager Game");
 			IO.println("5. Exit");
-			IO.println("---------------------------------------");
+			IO.println("---------------------------------------\n");
 			
 			
 			int choice = 0;
