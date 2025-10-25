@@ -1,4 +1,4 @@
-package bankAccountSystem;
+package src.bankAccountSystem;
 
 class CurrentAcount extends BankAccount {
 
